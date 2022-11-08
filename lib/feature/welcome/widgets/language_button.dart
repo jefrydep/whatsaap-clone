@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:whatsap_clone/common/utils/coloors.dart';
 
 class LanguageButton extends StatelessWidget {
   const LanguageButton({
@@ -18,7 +19,7 @@ class LanguageButton extends StatelessWidget {
           onTap: (){},
           borderRadius: BorderRadius.circular(20),
           splashFactory: NoSplash.splashFactory,
-          highlightColor: Color(0xff09141a),
+          highlightColor: const Color(0xff09141a),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children:const  [
@@ -29,7 +30,7 @@ class LanguageButton extends StatelessWidget {
             ),
             SizedBox(width: 10,),
             Text('English'),
-            Icon(Icons.keyboard_arrow_down,color: Color(0xff00aa884),),
+            Icon(Icons.keyboard_arrow_down,color: Coloors.greenDark),
             
           ],),
         ),

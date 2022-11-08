@@ -25,15 +25,15 @@ class WelcomeScreen extends StatelessWidget {
           children: [
             const Text('Welcome to my Own Whatsap',style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
             const SizedBox(height: 20,),
-            PrivacyAndTerms(),
+            const PrivacyAndTerms(),
           
-          SizedBox(height: 30,),
+          const SizedBox(height: 30,),
             CustomElevatedButton(
               onPressed: (){},
               text: 'AGREE AND CONTINUE',
             ),
-            SizedBox(height: 40,),
-            LanguageButton()
+            const SizedBox(height: 40,),
+            const LanguageButton()
           ],
         ))
 
