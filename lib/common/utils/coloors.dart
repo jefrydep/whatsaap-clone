@@ -13,4 +13,6 @@ class Coloors{
   static const Color greyLight = Color(0xff667781);
   static const Color backgrounDark = Color(0xff111b21);
   static const Color backgrounLIght = Color(0xffffffff);
+
+  static const Color greyBackgroun = Color(0xff202c33);
 }

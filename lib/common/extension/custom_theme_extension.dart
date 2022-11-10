@@ -16,16 +16,19 @@ extension ExtendedTheme on BuildContext{
       greyColor: Coloors.greyLight,
       blueColor: Coloors.blueLight,
       langBtnBgColor: Color(0xfff7f8fa),
-      langBtnHightColor: Color(0xffe8e8ed)
+      langBtnHightColor: Color(0xffe8e8ed),
+      authAppbarTextColor: Coloors.greenlight
     );
 
     
     static const darkMode = CustomThemeExtension(
-      circleImageColor: Color(0xff25d366),
-      greyColor: Coloors.greyLight,
-      blueColor: Coloors.blueLight,
-      langBtnBgColor: Color(0xfff7f8fa),
-      langBtnHightColor: Color(0xffe8e8ed)
+      circleImageColor: Coloors.greenDark,
+      greyColor: Coloors.greyDark,
+      blueColor: Coloors.blueDark,
+      langBtnBgColor: Color(0xff182229),
+      langBtnHightColor: Color(0xff09141a),
+      authAppbarTextColor: Color(0xffe9edef),
+      
     );
 
 
@@ -37,13 +40,15 @@ extension ExtendedTheme on BuildContext{
   final Color? blueColor;
   final Color? langBtnBgColor;
   final Color? langBtnHightColor;
+  final Color? authAppbarTextColor;
 
   const CustomThemeExtension(
       {this.circleImageColor,
       this.greyColor,
       this.blueColor,
       this.langBtnBgColor,
-      this.langBtnHightColor});
+      this.langBtnHightColor,
+      this.authAppbarTextColor});
 
   @override
   ThemeExtension<CustomThemeExtension> copyWith(
@@ -51,7 +56,9 @@ extension ExtendedTheme on BuildContext{
     Color? greyColor,
     Color? blueColor,
     Color? langBtnBgColor,
-    Color? langBtnHightColor,}
+    Color? langBtnHightColor,
+    Color? authAppbarTextColor,
+    }
   ) {
     return CustomThemeExtension(
       circleImageColor: circleImageColor ?? this.circleImageColor,
@@ -59,6 +66,7 @@ extension ExtendedTheme on BuildContext{
       blueColor: blueColor ?? this.blueColor,
       langBtnBgColor: circleImageColor ?? this.circleImageColor,
       langBtnHightColor: langBtnHightColor ?? this.langBtnHightColor,
+      authAppbarTextColor: authAppbarTextColor ?? this.authAppbarTextColor,
     );
      
   }
@@ -73,6 +81,7 @@ extension ExtendedTheme on BuildContext{
       blueColor: Color.lerp(blueColor, other.blueColor,t),
       langBtnBgColor: Color.lerp(langBtnBgColor, other.langBtnBgColor,t),
       langBtnHightColor: Color.lerp(langBtnHightColor, other.langBtnHightColor,t),
+      authAppbarTextColor: Color.lerp(authAppbarTextColor, other.authAppbarTextColor,t),
     );
      
   }
