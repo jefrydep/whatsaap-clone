@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsap_clone/common/extension/custom_theme_extension.dart';
 import 'package:whatsap_clone/common/utils/coloors.dart';
 
 import '../../../common/widgets/custom_elevated_button.dart';
@@ -17,7 +18,7 @@ class WelcomeScreen extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: Padding(
             padding:  const EdgeInsets.symmetric(horizontal: 50,vertical: 10),
-            child: Image.asset('assets/images/circle.png',color: Coloors.greenDark,),
+            child: Image.asset('assets/images/circle.png',color:context.theme.circleImageColor),
           ),
         )),
         const SizedBox(height: 40,),

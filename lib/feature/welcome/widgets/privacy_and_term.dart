@@ -1,7 +1,6 @@
-
 import 'package:flutter/material.dart';
 
-import '../../../common/utils/coloors.dart';
+import 'package:whatsap_clone/common/extension/custom_theme_extension.dart';
 
 class PrivacyAndTerms extends StatelessWidget {
   const PrivacyAndTerms({
@@ -11,21 +10,18 @@ class PrivacyAndTerms extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RichText(
-      textAlign: TextAlign.center,
-      text: const TextSpan(
-      text: 'Read OUr,',style: TextStyle(color: Coloors.greyDark),children: [
-        TextSpan(
-          
-          text: 'Privacy Policy',style: TextStyle(color:Coloors.blueDark)
-        ),
-        TextSpan(
-          text: 'Tap "Agree and continue" to accept the'
-        ),
-        TextSpan(
-          text: 'Terms of Services',style: TextStyle(color: Coloors.blueDark)
-        )
-      ]
-    )
-    );
+        textAlign: TextAlign.center,
+        text: TextSpan(
+            text: 'Read OUr,',
+            style: TextStyle(color: context.theme.greyColor),
+            children:   [
+              TextSpan(
+                  text: 'Privacy Policy',
+                  style: TextStyle(color:context.theme.blueColor)),
+              TextSpan(text: 'Tap "Agree and continue" to accept the'),
+              TextSpan(
+                  text: 'Terms of Services',
+                  style: TextStyle(color: context.theme.blueColor))
+            ]));
   }
 }
