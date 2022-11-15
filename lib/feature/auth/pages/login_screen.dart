@@ -1,7 +1,9 @@
+import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsap_clone/common/extension/custom_theme_extension.dart';
 import 'package:whatsap_clone/common/utils/coloors.dart';
 import 'package:whatsap_clone/common/widgets/custom_elevated_button.dart';
+import 'package:whatsap_clone/common/widgets/custom_icon_button.dart';
 import 'package:whatsap_clone/feature/auth/widgets/custom_text_field.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -15,6 +17,40 @@ class _LoginScreenState extends State<LoginScreen> {
   late TextEditingController countryNameController;
   late TextEditingController countryCodeController;
   late TextEditingController phoneNumberController;
+
+  showCountryCodePicker() {
+    showCountryPicker(
+        context: context,
+        showPhoneCode: true,
+        favorite: ['ET'],
+        countryListTheme: CountryListThemeData(
+            bottomSheetHeight: 600,
+            backgroundColor: Theme.of(context).backgroundColor,
+            flagSize: 22,
+            borderRadius: BorderRadius.circular(20),
+            textStyle: TextStyle(color: context.theme.greyColor),
+            inputDecoration: InputDecoration(
+                labelStyle: TextStyle(color: context.theme.greyColor),
+                prefixIcon: Icon(
+                  Icons.language,
+                  color: Coloors.greenDark,
+                ),
+                hintText: 'Search country code or name',
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: context.theme.greyColor!.withOpacity(0.2),
+                  ),
+                ),
+                focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                  color: Coloors.greenDark,
+                )))),
+        onSelect: (country) {
+          countryNameController.text = country.name;
+          countryCodeController.text = country.countryCode;
+        });
+  }
+
   @override
   void initState() {
     countryNameController = TextEditingController(text: 'Peru');
@@ -34,20 +70,11 @@ class _LoginScreenState extends State<LoginScreen> {
           style: TextStyle(color: context.theme.authAppbarTextColor),
         ),
         centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.more_vert,
-              color: context.theme.greyColor,
-            ),
-            splashColor: Colors.transparent,
-            splashRadius: 22,
-            iconSize: 22,
-            padding: EdgeInsets.zero,
-            constraints: const BoxConstraints(minWidth: 40),
-          )
-        ],
+        actions: [CustomIconButton(
+          onTap: (){},
+          icon: Icons.more_vert,
+
+        )],
       ),
       body: Column(
         children: [
@@ -73,16 +100,16 @@ class _LoginScreenState extends State<LoginScreen> {
               horizontal: 50,
             ),
             child: CustomTextFiel(
-              onTap: () {},
+              onTap: showCountryCodePicker,
               controller: countryNameController,
               readOnly: true,
-              suffixIcon: Icon(
+              suffixIcon: const Icon(
                 Icons.arrow_drop_down,
                 color: Coloors.greenDark,
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Padding(
@@ -92,13 +119,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   width: 70,
                   child: CustomTextFiel(
-                    onTap: () {},
+                    onTap: showCountryCodePicker,
                     controller: countryCodeController,
                     prefixTExt: '+',
                     readOnly: true,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 Expanded(
@@ -111,19 +138,26 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
             ),
           ),
-          const SizedBox(height: 20,),
-          Icon(Icons.heart_broken_rounded,color:Colors.red,size: 100, ),
-          Text('Your are my best Friend and my love Rosy',style: TextStyle(color: context.theme.greyColor),)
-
-        
-
+          const SizedBox(
+            height: 20,
+          ),
+          const Icon(
+            Icons.heart_broken_rounded,
+            color: Colors.red,
+            size: 100,
+          ),
+          Text(
+            'Your are my best Friend and my love Rosy',
+            style: TextStyle(color: context.theme.greyColor),
+          )
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: CustomElevatedButton(onPressed: () {
-        
-      }, text: 'NEXT',buttonWidth: 90,),
-      
+      floatingActionButton: CustomElevatedButton(
+        onPressed: () {},
+        text: 'NEXT',
+        buttonWidth: 90,
+      ),
     );
   }
 }
