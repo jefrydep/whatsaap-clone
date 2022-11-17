@@ -17,7 +17,9 @@ extension ExtendedTheme on BuildContext{
       blueColor: Coloors.blueLight,
       langBtnBgColor: Color(0xfff7f8fa),
       langBtnHightColor: Color(0xffe8e8ed),
-      authAppbarTextColor: Coloors.greenlight
+      authAppbarTextColor: Coloors.greenlight,
+      photoIconBgcolor: Color(0xfff0f2f3),
+      photoIconColor: Color(0xff9daab3)
     );
 
     
@@ -28,6 +30,9 @@ extension ExtendedTheme on BuildContext{
       langBtnBgColor: Color(0xff182229),
       langBtnHightColor: Color(0xff09141a),
       authAppbarTextColor: Color(0xffe9edef),
+        photoIconBgcolor: Color(0xff283339),
+      photoIconColor: Color(0xff61717b)
+      
       
     );
 
@@ -41,6 +46,8 @@ extension ExtendedTheme on BuildContext{
   final Color? langBtnBgColor;
   final Color? langBtnHightColor;
   final Color? authAppbarTextColor;
+  final Color? photoIconBgcolor;
+  final Color? photoIconColor;
 
   const CustomThemeExtension(
       {this.circleImageColor,
@@ -48,7 +55,11 @@ extension ExtendedTheme on BuildContext{
       this.blueColor,
       this.langBtnBgColor,
       this.langBtnHightColor,
-      this.authAppbarTextColor});
+      this.authAppbarTextColor,
+      this.photoIconBgcolor,
+      this.photoIconColor,
+
+      });
 
   @override
   ThemeExtension<CustomThemeExtension> copyWith(
@@ -58,6 +69,8 @@ extension ExtendedTheme on BuildContext{
     Color? langBtnBgColor,
     Color? langBtnHightColor,
     Color? authAppbarTextColor,
+    Color? photoIconBgcolor,
+    Color? photoIconColor,
     }
   ) {
     return CustomThemeExtension(
@@ -67,6 +80,8 @@ extension ExtendedTheme on BuildContext{
       langBtnBgColor: circleImageColor ?? this.circleImageColor,
       langBtnHightColor: langBtnHightColor ?? this.langBtnHightColor,
       authAppbarTextColor: authAppbarTextColor ?? this.authAppbarTextColor,
+      photoIconBgcolor: photoIconBgcolor ?? this.photoIconBgcolor,
+      photoIconColor: photoIconColor ?? this.photoIconColor,
     );
      
   }
@@ -80,6 +95,8 @@ extension ExtendedTheme on BuildContext{
       greyColor: Color.lerp(greyColor, other.greyColor,t),
       blueColor: Color.lerp(blueColor, other.blueColor,t),
       langBtnBgColor: Color.lerp(langBtnBgColor, other.langBtnBgColor,t),
+      photoIconBgcolor: Color.lerp(photoIconBgcolor, other.photoIconBgcolor,t),
+      photoIconColor: Color.lerp(photoIconColor, other.photoIconColor,t),
       langBtnHightColor: Color.lerp(langBtnHightColor, other.langBtnHightColor,t),
       authAppbarTextColor: Color.lerp(authAppbarTextColor, other.authAppbarTextColor,t),
     );

@@ -31,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
             textStyle: TextStyle(color: context.theme.greyColor),
             inputDecoration: InputDecoration(
                 labelStyle: TextStyle(color: context.theme.greyColor),
-                prefixIcon: Icon(
+                prefixIcon: const Icon(
                   Icons.language,
                   color: Coloors.greenDark,
                 ),
@@ -41,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     color: context.theme.greyColor!.withOpacity(0.2),
                   ),
                 ),
-                focusedBorder: UnderlineInputBorder(
+                focusedBorder: const UnderlineInputBorder(
                     borderSide: BorderSide(
                   color: Coloors.greenDark,
                 )))),
